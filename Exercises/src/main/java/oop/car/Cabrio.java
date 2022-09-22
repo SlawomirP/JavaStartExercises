@@ -1,4 +1,4 @@
-package oop;
+package oop.car;
 
 public class Cabrio {
 
@@ -14,7 +14,7 @@ public class Cabrio {
         this.isRoofOpen = false;
     }
 
-    void openRoof(){
+    public void openRoof(){
         if(isMoving){
             System.out.println("You con't open the roof when car is moving.");
         } else {
@@ -23,7 +23,7 @@ public class Cabrio {
         }
 
     }
-    void closeRoof(){
+    public void closeRoof(){
         if(isMoving){
             System.out.println("You con't close the roof when car is moving.");
         } else {
@@ -32,17 +32,17 @@ public class Cabrio {
         }
     }
 
-    void drivingTime(){
+    public void drivingTime(){
         System.out.println("Car is moving");
         this.isMoving = true;
     }
 
-    void stopDriving(){
+    public void stopDriving(){
         System.out.println("Car has stopped");
         this.isMoving = false;
     }
 
-    boolean isRoofOpen(){
+    public boolean isRoofOpen(){
         return this.isRoofOpen;
     }
 
