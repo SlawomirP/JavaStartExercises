@@ -2,12 +2,14 @@ package oop.paymentCalculator;
 
 public class PaymentCalculator {
 
-    public double nettoYearPayment(Emplyee emplyee){
+    private static final double ZUS_PAYMENT = 100;
+
+    public static double nettoYearPayment(Emplyee emplyee){
         double netYearPayment = emplyee.getSalary() * 12;
         return netYearPayment;
     }
-    public double bruttoYearPayment(Emplyee emplyee){
-        double grossYearPayment = 12 * (emplyee.getSalary() + 1000 + (emplyee.getSalary()/5));
+    public static double bruttoYearPayment(Emplyee emplyee){
+        double grossYearPayment = 12 * (emplyee.getSalary() + ZUS_PAYMENT + (emplyee.getSalary()/5));
         return grossYearPayment;
     }
 }
