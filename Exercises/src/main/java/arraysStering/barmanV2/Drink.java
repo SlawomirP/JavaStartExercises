@@ -12,19 +12,17 @@ public class Drink {
         this.ingredients = ingredients;
     }
 
-    void addIngredient (Ingredient ingredient){
+    void addIngredient(Ingredient ingredient) {
         this.ingredients.add(ingredient);
     }
 
-    int getNumberOfIngredients(){
+    int getAmountOfIngredients() {
         return ingredients.size();
     }
 
-    void printDrinkIngredients(){
-        for (Ingredient ingredient: ingredients
-             ) {
+    void printDrinkIngredients() {
+        for (Ingredient ingredient : ingredients) {
             System.out.println(ingredient);
-
         }
     }
 }
