@@ -1,5 +1,6 @@
 package arraysStering.controler;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class Ticket {
@@ -23,5 +24,9 @@ public class Ticket {
 
     public int getValidityTime() {
         return validityTime;
+    }
+
+    public boolean isTheTicketValid(){
+        return (Duration.between(this.activationTime, LocalDateTime.now()).toMinutes()) < this.validityTime;
     }
 }
