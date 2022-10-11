@@ -26,7 +26,6 @@ public class TicketController {
 
         System.out.println(passengersWithInvalidTicket(passengers));
 
-
     }
 
     private static List<Passenger> passengersWithInvalidTicket(List<Passenger> passengers){

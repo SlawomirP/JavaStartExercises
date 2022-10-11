@@ -18,13 +18,17 @@ private List<Ingredient> ingredientList = new ArrayList<>();
         int numberOfIngredients = SCANNER.nextInt();
 
         while(ingredientList.size() != numberOfIngredients){
-            System.out.println("Write name of the ingredient");
-            String name = SCANNER.next();
-            System.out.println("Write quantity of the ingredient");
-            int quantity = SCANNER.nextInt();
-            ingredientList.add(new Ingredient(name, quantity));
+            creatingIngredientsList();
         }
         Drink drink = barman.createDrink(ingredientList);
         barman.printDrink(drink);
+    }
+
+    private void creatingIngredientsList() {
+        System.out.println("Write name of the ingredient");
+        String name = SCANNER.next();
+        System.out.println("Write quantity of the ingredient");
+        int quantity = SCANNER.nextInt();
+        ingredientList.add(new Ingredient(name, quantity));
     }
 }

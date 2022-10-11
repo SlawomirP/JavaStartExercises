@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Drink {
 
-    List<Ingredient> ingredients = new ArrayList<>();
+    List<Ingredient> ingredients;
 
     public Drink(List<Ingredient> ingredients) {
         this.ingredients = ingredients;
