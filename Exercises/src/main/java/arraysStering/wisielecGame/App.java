@@ -8,9 +8,8 @@ public class App {
 
         Game game = new Game();
 
+        game.start();
 
-        for (int i = 0; i < 25; i++) {
-            game.start();
-        }
+
     }
 }
