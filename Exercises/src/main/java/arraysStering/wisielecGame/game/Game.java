@@ -25,8 +25,8 @@ public class Game {
 
     public void start() {
 
-        System.out.println("poczatek liczba prob: " + attempts);
         String password = word.getPassword(random.randomNumber());
+
         System.out.println("haslo -> " + password);
 
         List<String> splitPassword = new ArrayList<>(Arrays.asList(password.split("")));
@@ -50,7 +50,7 @@ public class Game {
 
             System.out.println(Messages.GUESS_PASSWORD);
             printArray.printArray(hidePassword);
-            System.out.println("liczba prob po zgadywaniu: " + attempts);
+
 
 
         }
