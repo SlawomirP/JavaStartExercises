@@ -28,23 +28,29 @@ public class Game {
         System.out.println("poczatek liczba prob: " + attempts);
         String password = word.getPassword(random.randomNumber());
         System.out.println("haslo -> " + password);
-        List<String> splitPassword = new ArrayList<>(Arrays.asList(password.split("")));
 
+        List<String> splitPassword = new ArrayList<>(Arrays.asList(password.split("")));
         List<String> hidePassword = returnArray.createStarsArray(splitPassword.size());
+
         System.out.println(Messages.GUESS_PASSWORD);
         printArray.printArray(hidePassword);
 
         while (attempts < Config.MISTAKES_LIMIT) {
             System.out.println(Messages.WRITE_LETTER);
-            if(!letterChecker.checkTheLetter(scanner.next(),splitPassword,hidePassword)){
+
+                if (!letterChecker.checkTheLetter(scanner.next(), splitPassword, hidePassword)) {
                 attempts++;
-            }
+                }
+
+                if(splitPassword.equals(hidePassword)){
+                    System.out.println(Messages.YOU_GUESS);
+                    printArray.printArray(hidePassword);
+                    break;
+                }
 
             System.out.println(Messages.GUESS_PASSWORD);
             printArray.printArray(hidePassword);
             System.out.println("liczba prob po zgadywaniu: " + attempts);
-
-
 
 
         }
