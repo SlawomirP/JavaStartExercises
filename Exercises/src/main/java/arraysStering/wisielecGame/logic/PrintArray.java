@@ -5,8 +5,8 @@ import java.util.List;
 public class PrintArray {
 
     public void printArray(List<String> password){
-        for (int i = 0; i < password.size() ; i++) {
-            System.out.print(password.get(i));
+        for (String s : password) {
+            System.out.print(s);
         }
         System.out.println();
     }

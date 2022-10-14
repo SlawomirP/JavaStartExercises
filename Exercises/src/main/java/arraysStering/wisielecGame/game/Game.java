@@ -27,7 +27,6 @@ public class Game {
 
         String password = word.getPassword(random.randomNumber());
 
-        System.out.println("haslo -> " + password);
 
         List<String> splitPassword = new ArrayList<>(Arrays.asList(password.split("")));
         List<String> hidePassword = returnArray.createStarsArray(splitPassword.size());
