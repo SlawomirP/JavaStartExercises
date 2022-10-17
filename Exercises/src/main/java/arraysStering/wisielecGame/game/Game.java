@@ -6,6 +6,7 @@ import arraysStering.wisielecGame.logic.LetterChecker;
 import arraysStering.wisielecGame.logic.PrintArray;
 import arraysStering.wisielecGame.logic.RandomNumber;
 import arraysStering.wisielecGame.logic.ReturnArray;
+import arraysStering.wisielecGame.logic.ToStarChanger;
 import arraysStering.wisielecGame.messages.Messages;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class Game {
     private final ReturnArray returnArray = new ReturnArray();
     private final Scanner scanner = new Scanner(System.in);
     private final LetterChecker letterChecker = new LetterChecker();
+    private final ToStarChanger toStarChanger = new ToStarChanger();
     int attempts = 0;
 
     public void start() {
@@ -29,26 +31,30 @@ public class Game {
 
 
         List<String> splitPassword = new ArrayList<>(Arrays.asList(password.split("")));
-        List<String> hidePassword = returnArray.createStarsArray(splitPassword.size());
+        printArray.printArray(splitPassword);
+        List<String> hidPassword = toStarChanger.changeToStar(splitPassword);
+
+
+
 
         System.out.println(Messages.GUESS_PASSWORD);
-        printArray.printArray(hidePassword);
+        printArray.printArray(hidPassword);
 
         while (attempts < Config.MISTAKES_LIMIT) {
             System.out.println(Messages.WRITE_LETTER);
 
-                if (!letterChecker.checkTheLetter(scanner.next(), splitPassword, hidePassword)) {
+                if (!letterChecker.checkTheLetter(scanner.next(), splitPassword, hidPassword)) {
                 attempts++;
                 }
 
-                if(splitPassword.equals(hidePassword)){
+                if(splitPassword.equals(hidPassword)){
                     System.out.println(Messages.YOU_GUESS);
-                    printArray.printArray(hidePassword);
+                    printArray.printArray(hidPassword);
                     break;
                 }
 
             System.out.println(Messages.GUESS_PASSWORD);
-            printArray.printArray(hidePassword);
+            printArray.printArray(hidPassword);
 
 
 
