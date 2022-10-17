@@ -31,10 +31,8 @@ public class Game {
 
 
         List<String> splitPassword = new ArrayList<>(Arrays.asList(password.split("")));
-        printArray.printArray(splitPassword);
+//        printArray.printArray(splitPassword);
         List<String> hidPassword = toStarChanger.changeToStar(splitPassword);
-
-
 
 
         System.out.println(Messages.GUESS_PASSWORD);
@@ -43,19 +41,18 @@ public class Game {
         while (attempts < Config.MISTAKES_LIMIT) {
             System.out.println(Messages.WRITE_LETTER);
 
-                if (!letterChecker.checkTheLetter(scanner.next(), splitPassword, hidPassword)) {
+            if (!letterChecker.checkTheLetter(scanner.next(), splitPassword, hidPassword)) {
                 attempts++;
-                }
+            }
 
-                if(splitPassword.equals(hidPassword)){
-                    System.out.println(Messages.YOU_GUESS);
-                    printArray.printArray(hidPassword);
-                    break;
-                }
+            if (splitPassword.equals(hidPassword)) {
+                System.out.println(Messages.YOU_GUESS);
+                printArray.printArray(hidPassword);
+                break;
+            }
 
             System.out.println(Messages.GUESS_PASSWORD);
             printArray.printArray(hidPassword);
-
 
 
         }

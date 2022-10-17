@@ -4,7 +4,7 @@ import arraysStering.wisielecGame.data.Data;
 
 public class GetPassword {
 
-    public String getPassword (int number){
+    public String getPassword(int number) {
         return Data.PASSWORDS.get(number);
     }
 }
